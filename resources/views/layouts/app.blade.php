@@ -112,6 +112,7 @@
         </nav>
 
         @yield('content')
+        <footer class="footer text-center"> © {{ Date('Y') }} Developed by Alvin & Nathan</footer>
     </div>
 
     <!-- Scripts -->

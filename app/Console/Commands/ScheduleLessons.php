@@ -6,6 +6,7 @@ use App\ScheduleLesson;
 use Illuminate\Console\Command;
 use App\Aft\AfricasTalking;
 use Carbon\Carbon;
+use Log;
 
 class ScheduleLessons extends Command
 {
@@ -41,6 +42,7 @@ class ScheduleLessons extends Command
     public function handle()
     {
 
+        Log::info('Started sending sms');
 //        $AT =  new AfricasTalking(config('aft.user_name'),config('aft.owner_secret'));
 //        $sms= $AT->sms();
 //        $sms->send([
@@ -48,21 +50,21 @@ class ScheduleLessons extends Command
 //            'message' => 'This worked like a charm. I just love it'
 //
 //        ]);
-        $lessons = ScheduleLesson::all();
-        foreach ($lessons as $lesson){
-            $time_now = date('H:i');
-            $s_time =date("H:i", strtotime($lesson->time));
-            if($s_time == $time_now){
-
-                $AT =  new AfricasTalking(config('aft.user_name'),config('aft.owner_secret'));
-                $sms= $AT->sms();
-                $sms->send([
-                    'to'      => '0704522671',
-                    'message' => 'This worked like a charm. I just love it'
-
-                ]);
-            }
-        }
+//        $lessons = ScheduleLesson::all();
+//        foreach ($lessons as $lesson){
+//            $time_now = date('H:i');
+//            $s_time =date("H:i", strtotime($lesson->time));
+//            if($s_time == $time_now){
+//
+//                $AT =  new AfricasTalking(config('aft.user_name'),config('aft.owner_secret'));
+//                $sms= $AT->sms();
+//                $sms->send([
+//                    'to'      => '0704522671',
+//                    'message' => 'This worked like a charm. I just love it'
+//
+//                ]);
+//            }
+//        }
 
     }
 }
