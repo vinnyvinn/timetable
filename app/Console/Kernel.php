@@ -6,6 +6,7 @@ use App\ScheduleLesson;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Aft\AfricasTalking;
+use App\Jobs\SendSmsJob;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,7 +17,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
 
-        'App\Console\Commands\ScheduleLessons',
+        '\App\Console\Commands\ScheduleLessons'
     ];
 
     /**
@@ -30,6 +31,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('lesson:teachers')
             ->everyMinute();
+
     }
 
     /**
