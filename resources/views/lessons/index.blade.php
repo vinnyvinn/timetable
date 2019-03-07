@@ -24,8 +24,10 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @if(count($lessons))
                             @foreach($lessons as $lesson)
                                 <tr>
+
                                     <td>{{$lesson->id}}</td>
                                     <td>{{$lesson->teacher->first_name .' '.$lesson->teacher->last_name}}</td>
                                     <th>{{$lesson->school->name}}</th>
@@ -38,6 +40,7 @@
                                     </td>
                                 </tr>
                             @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>
