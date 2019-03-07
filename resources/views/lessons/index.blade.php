@@ -29,10 +29,10 @@
                                 <tr>
 
                                     <td>{{$lesson->id}}</td>
-                                    <td>{{$lesson->teacher->first_name .' '.$lesson->teacher->last_name}}</td>
-                                    <th>{{$lesson->school->name}}</th>
-                                    <th>{{$lesson->myclass->name}}</th>
-                                    <th>{{$lesson->subject->name}}</th>
+                                    <td>{{$lesson->teacher ? ($lesson->teacher->first_name .' '.$lesson->teacher->last_name) :''}}</td>
+                                    <th>{{$lesson->school ? $lesson->school->name : ''}}</th>
+                                    <th>{{$lesson->myclass ? $lesson->myclass->name :''}}</th>
+                                    <th>{{$lesson->subject ? $lesson->subject->name :''}}</th>
                                     <th>{{$lesson->date}}</th>
                                     <th>{{$lesson->time}}</th>
                                     <td><a href="{{url('lessons/'.$lesson->id.'/edit')}}" class="btn btn-info btn-xs pull-left"><span class="glyphicon glyphicon-edit"></span> </a>
