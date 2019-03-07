@@ -13,6 +13,7 @@
                             <div class="form-group">
                                 <label for="teacher_id">Teacher</label>
                                 <select name="teacher_id" id="teacher_id" class="form-control" required>
+
                                     @foreach($teachers as $teacher)
                                         <option value="{{$teacher->id}}"> {{$teacher->first_name .' '.$teacher->last_name}}</option>
                                         @endforeach

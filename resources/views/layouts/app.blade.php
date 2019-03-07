@@ -73,6 +73,9 @@
                         <a class="btn btn-info btn-sm" href="{{ url('/lessons') }}">
                             Schedule Lessons
                         </a>
+                        <a class="btn btn-info btn-sm" href="{{ url('/reports/create') }}">
+                            Generate Timetable
+                        </a>
                           </ul>
                     @endif
 

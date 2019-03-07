@@ -25,3 +25,5 @@ Route::get('classes/delete/{id}','ClassesController@destroy');
 Route::resource('lessons','ScheduleLessonsController');
 Route::get('/lessons/delete/{id}','ScheduleLessonsController@destroy');
 Route::get('sms','SendMessagesController@index');
+Route::resource('reports','ReportsController');
+Route::get('reports/to-excel/{t_id}/{s_id}','ReportsController@toExcel');
